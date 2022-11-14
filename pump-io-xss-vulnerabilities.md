@@ -1,7 +1,7 @@
 
 ### Stored XSS #1
 
-https://datamost.com/<USERNAME>/lists
+https://datamost.com/USERNAME/lists
 
 - Vulnerable parameter "Name"
 
