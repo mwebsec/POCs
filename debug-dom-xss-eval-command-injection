@@ -1,1 +1,23 @@
+### Challenge DOM XSS eval() command execution
 
+<p id=“debug”></p>
+<script src=[…]</script>
+[…]
+<script>
+Let debug = object.create(null);
+Debug.enabled = false;
+Let descriptor = { 
+	configurable:false,
+	writable:false
+	};
+Object.defineProperty(debug, ‘enabled’, descriptor);
+</script>
+<script>
+	let debugContainer = $(‘#debug’);
+	let message = “You don’t look like an admin”:
+	if (debug.enabled) {
+		message = eval($.query.get(‘cmd’));
+	}
+	let text = document.createTextNode(message):
+	debugContainer.append(text);
+</script>
