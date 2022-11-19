@@ -1,5 +1,9 @@
 ### Challenge DOM XSS eval() command execution
 
+- IF debug enabled (default false)
+	- Then use "cmd" parameter to execute command via eval()
+	- POC #debug?cmd=id
+	
 <p id=“debug”></p>
 <script src=[…]</script>
 […]
@@ -21,3 +25,5 @@ Object.defineProperty(debug, ‘enabled’, descriptor);
 	let text = document.createTextNode(message):
 	debugContainer.append(text);
 </script>
+
+
