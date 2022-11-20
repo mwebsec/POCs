@@ -51,6 +51,7 @@ X-Powered-By: PHP/5.6.40
 ```
 
 
+
 Stored XSS #2:
 
 
@@ -93,6 +94,7 @@ Perl/v5.16.3
 [...]
 <small>Sub Forums:  <a href="index.php?module=forum-management&amp;fid=3">"><script>alert(1)</script></a></small>
 ```
+
 
 Stored XSS #3:
 
