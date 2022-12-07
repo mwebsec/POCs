@@ -1,5 +1,5 @@
 
-Stored XSS #1
+### Stored XSS
 
 To reproduce do the following:
 
